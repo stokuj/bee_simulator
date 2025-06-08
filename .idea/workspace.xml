@@ -4,8 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fb041254-482b-4855-8bba-1c2a58d30992" name="Changes" comment="">
+    <list default="true" id="fb041254-482b-4855-8bba-1c2a58d30992" name="Changes" comment="add initial implementation of bee simulation components and configuration">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/simulation_config.ini" beforeDir="false" afterPath="$PROJECT_DIR$/config/simulation_config.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entities/bee/bee_base.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/bee/bee_base.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entities/bee/worker_bee.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/bee/worker_bee.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entities/environment/flower.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/environment/flower.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entities/environment/hive.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/environment/hive.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/environment/map_generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/environment/map_generator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_entities/test_bee_behavior.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_entities/test_bee_behavior.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_integration/test_configuration.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_integration/test_configuration.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,6 +59,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "reference.settingsdialog.project.grazie",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -99,7 +109,7 @@
       <option name="presentableId" value="Default" />
       <updated>1749409905357</updated>
       <workItem from="1749409906437" duration="1224000" />
-      <workItem from="1749411384848" duration="369000" />
+      <workItem from="1749411384848" duration="8314000" />
     </task>
     <task id="LOCAL-00001" summary="initialize project configuration files for bee_simulator">
       <option name="closed" value="true" />
@@ -109,7 +119,23 @@
       <option name="project" value="LOCAL" />
       <updated>1749411243201</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="update workspace configuration for bee_simulator project">
+      <option name="closed" value="true" />
+      <created>1749412046384</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1749412046384</updated>
+    </task>
+    <task id="LOCAL-00003" summary="add initial implementation of bee simulation components and configuration">
+      <option name="closed" value="true" />
+      <created>1749412054120</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1749412054120</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -117,10 +143,12 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="initialize project configuration files for bee_simulator" />
-    <option name="LAST_COMMIT_MESSAGE" value="initialize project configuration files for bee_simulator" />
+    <MESSAGE value="update workspace configuration for bee_simulator project" />
+    <MESSAGE value="add initial implementation of bee simulation components and configuration" />
+    <option name="LAST_COMMIT_MESSAGE" value="add initial implementation of bee simulation components and configuration" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/bee_simulator$main.coverage" NAME="main Coverage Results" MODIFIED="1749411726432" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
-    <SUITE FILE_PATH="coverage/bee_simulator$Main.coverage" NAME="Main Coverage Results" MODIFIED="1749411759071" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+    <SUITE FILE_PATH="coverage/bee_simulator$Main.coverage" NAME="Main Coverage Results" MODIFIED="1749421507107" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
   </component>
 </project>

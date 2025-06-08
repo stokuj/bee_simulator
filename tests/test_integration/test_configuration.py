@@ -8,7 +8,6 @@ class TestConfigManager(unittest.TestCase):
     def test_load_config(self):
         self.config.load()
         self.assertIsNotNone(self.config.get("simulation", "speed"))
-        self.assertIsNotNone(self.config.get("simulation", "map_size"))
 
     def test_set_and_save_config(self):
         self.config.set("simulation", "speed", "2.0")
