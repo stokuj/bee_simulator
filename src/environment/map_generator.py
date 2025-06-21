@@ -7,24 +7,13 @@ Position = namedtuple("Position", ["x", "y"])
 
 class MapGenerator:
     def generate_basic_map(self):
-        # Tworzy większą mapę z jednym ulem i większą ilością kwiatów
-        hive = Hive(Position(10, 10))  # Ul na środku mapy
+        # Tworzy 10x większą mapę z jednym ulem i 5x większą ilością kwiatów
+        hive = Hive(Position(100, 100))  # Ul na środku mapy (200x200)
 
-        # Generowanie 14 kwiatów z różnymi ilościami nektaru
-        flowers = [
-            Flower(Position(2, 3), initial_nectar=random.randint(4, 10)),
-            Flower(Position(15, 8), initial_nectar=random.randint(4, 10)),
-            Flower(Position(4, 16), initial_nectar=random.randint(4, 10)),
-            Flower(Position(18, 18), initial_nectar=random.randint(4, 10)),
-            Flower(Position(7, 12), initial_nectar=random.randint(4, 10)),
-            Flower(Position(13, 5), initial_nectar=random.randint(4, 10)),
-            Flower(Position(9, 15), initial_nectar=random.randint(4, 10)),
-            Flower(Position(3, 8), initial_nectar=random.randint(4, 10)),
-            Flower(Position(16, 12), initial_nectar=random.randint(4, 10)),
-            Flower(Position(6, 18), initial_nectar=random.randint(4, 10)),
-            Flower(Position(14, 15), initial_nectar=random.randint(4, 10)),
-            Flower(Position(8, 7), initial_nectar=random.randint(4, 10)),
-            Flower(Position(17, 4), initial_nectar=random.randint(4, 10)),
-            Flower(Position(12, 9), initial_nectar=random.randint(4, 10))
-        ]
+        # Generowanie 70 kwiatów (5x więcej) z losowymi pozycjami na większej mapie
+        flowers = []
+        for _ in range(70):
+            x = random.randint(10, 190)  # Unikamy skrajnych krawędzi
+            y = random.randint(10, 190)
+            flowers.append(Flower(Position(x, y), initial_nectar=random.randint(4, 10)))
         return [hive] + flowers

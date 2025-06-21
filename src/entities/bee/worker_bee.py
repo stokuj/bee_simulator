@@ -104,4 +104,4 @@ class WorkerBee(BeeBase, LoggerSubject):
                         self.target_flower = None
                         self.last_visited_flower = None  # Reset ostatnio odwiedzonego kwiatu po oddaniu nektaru
 
-            time.sleep(0.05)
+            #time.sleep(0.000005)

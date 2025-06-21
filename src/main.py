@@ -1,6 +1,7 @@
 import time
 import pygame
 import random
+import math
 from src.environment.map_generator import MapGenerator
 from src.entities.bee.worker_bee import WorkerBee
 from src.utils.vector import Vector2D
@@ -10,18 +11,18 @@ def draw_environment(screen, environment_objects):
     screen.fill((255, 255, 255))  # białe tło
     for obj in environment_objects:
         if obj.__class__.__name__ == "Hive":
-            pygame.draw.rect(screen, (255, 215, 0), pygame.Rect(obj.position.x * 40, obj.position.y * 40, 40, 40))  # złoty kwadrat
+            pygame.draw.rect(screen, (255, 215, 0), pygame.Rect(obj.position.x * 6, obj.position.y * 6, 6, 6))  # złoty kwadrat
         elif obj.__class__.__name__ == "Flower":
             color = (255, 0, 0) if obj.nectar > 0 else (0, 0, 0)
-            pygame.draw.circle(screen, color, (int(obj.position.x * 40 + 20), int(obj.position.y * 40 + 20)), 15)
+            pygame.draw.circle(screen, color, (int(obj.position.x * 6 + 3), int(obj.position.y * 6 + 3)), 2)
 
 def draw_bees(screen, bees):
     for bee in bees:
-        pygame.draw.circle(screen, (0, 0, 255), (int(bee.position.x * 40 + 20), int(bee.position.y * 40 + 20)), 10)  # niebieskie kółko
+        pygame.draw.circle(screen, (0, 0, 255), (int(bee.position.x * 6 + 3), int(bee.position.y * 6 + 3)), 2)  # niebieskie kółko
 
 def main():
     pygame.init()
-    screen = pygame.display.set_mode((800, 800))  # Zwiększony rozmiar okna do 800x800
+    screen = pygame.display.set_mode((1200, 1200))  # Zmniejszony rozmiar okna do 1200x1200
     pygame.display.set_caption("Bee Simulator")
 
     # Załaduj konfigurację
@@ -33,14 +34,15 @@ def main():
     environment_objects = map_gen.generate_basic_map()
     hive = [obj for obj in environment_objects if obj.__class__.__name__ == "Hive"][0]
 
-    # Utwórz pszczoły robotnice wokół ula (pozycja 10,10)
-    bees = [
-        WorkerBee(id="bee1", position=Vector2D(9, 9)),
-        WorkerBee(id="bee2", position=Vector2D(9, 10)),
-        WorkerBee(id="bee3", position=Vector2D(10, 9)),
-        WorkerBee(id="bee4", position=Vector2D(11, 10)),
-        WorkerBee(id="bee5", position=Vector2D(10, 11))
-    ]
+    # Utwórz 25 pszczół (5x więcej) wokół ula (pozycja 100,100)
+    bees = []
+    for i in range(25):
+        # Losowe pozycje w promieniu 20 jednostek od ula
+        angle = random.uniform(0, 2 * 3.14159)
+        radius = random.uniform(5, 20)
+        x = 100 + radius * math.cos(angle)
+        y = 100 + radius * math.sin(angle)
+        bees.append(WorkerBee(id=f"bee{i+1}", position=Vector2D(x, y)))
     for bee in bees:
         bee.hive_ref = hive
         # Początkowe ustawienie celu dla każdej pszczoły
